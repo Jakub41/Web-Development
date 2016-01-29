@@ -1,0 +1,219 @@
+﻿@import "compass/css3";
+
+$w: 40px;
+$h: 40px;
+$popup_w: 250px;
+
+* {
+  @include transition(all 0.3s);
+  @include box-sizing(border-box);
+}
+
+
+body {
+  @include background-image(linear-gradient(left bottom, #fef2f0 0%,#d7d6d5 100%));
+}
+
+@mixin animation ($duration, $animation) {
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-direction: normal ;    
+    -webkit-animation-timing-function: cubic-bezier(1,.18,1,.93);
+  
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-direction: normal ;  
+    -moz-animation-timing-function: cubic-bezier(1,.18,1,.93);
+  
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-direction: normal ; 
+    -o-animation-timing-function: cubic-bezier(1,.18,1,.93);
+  
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-direction: normal ;
+    animation-timing-function: cubic-bezier(1,.18,1,.93);
+}
+
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes $animation_name {
+        @content;
+    }
+ 
+    @-moz-keyframes $animation_name {
+        @content;
+    }
+ 
+    @-o-keyframes $animation_name {
+        @content;
+    }
+ 
+    @keyframes $animation_name {
+        @content;
+    }
+}
+
+ @include keyframe(show-popup) {
+from {
+    @include transform(rotate(45deg) translate(-80px, 40px));
+  }
+ to {
+    @include transform(rotate(0deg) translate(0px, 0));
+  }
+} 
+
+/* button style */
+.cart {
+  width: $w;
+  height: $h;
+  padding: 0;
+  margin: 0;
+  margin-top: 100px;
+  position: absolute;
+  left: 50% ;
+  margin-left: -$w/2;
+  
+  @include border-radius(9999em);
+  border: none;
+  background: #e54040;
+  cursor: pointer;
+  
+  &:hover {   
+    @include box-shadow(inset 0 0 7px 0 rgba(0,0,0,0.5));   
+    
+    .popup {   
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        @include  animation (200ms, show-popup);
+     }
+  }
+  
+}
+
+/* popup window style */
+.popup {  
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  
+  position: absolute;
+  top: 100%;
+  width: $popup_w;
+  margin-left: -$popup_w/2 + $w/2;
+  
+  margin-top: 20px;
+  
+  background: #ffffff;
+  border: 1px solid #cbcbcb;  
+  @include border-radius(5px);
+  @include box-shadow(0 0 3px 0 rgba(0,0,0,0.3));
+  
+   &:after {
+    position: absolute;
+    content: ' ';
+    top: -30px;
+    height: 30px;
+    width: 100%;
+  }
+  
+   &:before {
+    position: absolute;
+    content: ' ';
+    left: $popup_w/2 - 8px;
+    top: -9px;
+    width: 16px;
+    height: 16px;
+    border-top: 1px solid #cbcbcb;
+    border-right: 1px solid #cbcbcb;
+    background: #ffffff;
+    @include box-shadow(1px -1px 1px 0 rgba(0,0,0,0.2));
+    @include transform(rotate(-45deg));
+  }
+}
+
+/* data rows */  
+.row {
+  padding: 15px 20px;
+  overflow: hidden;
+  
+  &.header {  
+    @include background-image(linear-gradient(top, #ffffff 0%,#e7e7e7 100%));
+    @include background-image(-ms-linear-gradient(top, #ffffff 0%,#e7e7e7 100%));
+    @include box-shadow(0 1px 0 0 rgba(203,203,203,0.75));
+    @include border-radius(5px 5px 0 0);
+    color: #747474;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.75);
+    font: bold 11px Arial;
+  }
+  &.items {  //cart items row
+    color: #e54040;
+    font: bold 18px Arial;
+    position: relative;
+    
+    span:first-child {
+      color: #000000;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      @include background-image(linear-gradient(left, #ffffff 0%,#dddddd 50%,#ffffff 100%));
+      left: 0;
+      top: 97%;
+    }
+  }
+  
+  &.checkout {  //checkout row
+    font: normal 12px Arial;
+    
+    span:first-child {
+      padding: 3px 0;
+    }
+    a {
+      color: #e54040; 
+      text-decoration: none;
+      
+      &:hover {
+         text-decoration: underline;
+      }
+    }
+    
+    
+  }
+  
+  span:first-child {
+    float: left;
+  }
+  span:last-child {
+    float: right;
+  }
+}
+  
+
+.checkout-button {
+  padding: 3px 5px;
+  background: #e54040;
+  @include box-shadow(inset 0 2px 7px 0 rgba(255,255,255,0.3));
+  border: 1px solid #e06b6b;
+  @include border-radius(3px);
+  
+  color: #ffffff;
+  &:hover {
+    background: #e54040;
+    @include box-shadow(none);
+  }
+  &:active {
+     background: #e54040;
+    @include box-shadow(inset 0 1px 2px 0 rgba(0,0,0,0.2));
+  }
+}
+
+
+.cart {
+ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAGPSURBVHjajNNNi85RGAbw3zwzI/XMmEHeFYmSvJRSYsOWfAHZ+wAWakp8AAs+A5ImKzujUfKapQnZzIaVxzCYGcMzXRbuydO/Wcxdd+ecq3Ouc67rvk9fkqcY8T8mcA3frSIGcLKBfcMaq4wWpjCNjwi2o71aggGcQT92YBybcLTIZ7ABX7G+xlF8qvWgJMs5kuRFksUkDypPJLmd5FSSW0lOJ7lT+GSSt70E7SQ38i+eJDmSZE+SA0n21bi35heTdJMstnrkzOMlfmELhnEVQxjDOlzBDxwv2c/7kvR6sh+Py8QLeFde9GMJ3arQw/JqrNUwtVMVaWMbFnC51pfwGQfrhR1MNgnm8LpuPVsNdr0236xKncdgyZ0eaBD8xhss4hyOlea1hQ1ha0mZwM8mwRKe4VVJ6K9Daj6PD9V0j7DUNBH6sLNcn8efOtytp7cxW82U3j5Yzs1J7ieZSnI3yXDho0nGC7+XZGMSKxEcSjJbDdVJsrvwww18VxKtFf7HTH2wObwvGfClgS/A3wEAjJAlBBKFdqAAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: center;
+}

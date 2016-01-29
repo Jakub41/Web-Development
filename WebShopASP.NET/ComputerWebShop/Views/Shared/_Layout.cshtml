@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - @Resources.Resources.Title</title>
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <link href="~/Content/styleCart.css" rel="stylesheet" />
+    <link href="~/Content/Cartstyle.css" rel="stylesheet" />
+    <link href="~/Content/normalize.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/rating_1_0/rating.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    @Scripts.Render("~/bundles/templatescripts")
+    <script src="~/Scripts/index.js"></script>
+    <script src="~/Scripts/JquerySearch/jquery-ui.js"></script>
+
+    <script src="~/rating_1_0/rating.js"></script>
+
+
+
+</head>
+<body>
+    <div class="header">
+        <div class="top-header">
+            <div class="container">
+                <div class="top-header-left">
+                    <ul class="support">
+                        <li><a href="#"><label> </label></a></li>
+                        <li><a href="#">@Resources.Resources.live247<span class="live"> support</span></a></li>
+                    </ul>
+                    <ul class="support">
+                        <li class="van"><a href="#"><label> </label></a></li>
+                        <li><a href="#">@Resources.Resources.Free @Resources.Resources.Shipping <span class="live">@Resources.Resources.over500</span></a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="top-header-right">
+                    <div class="down-top">
+
+                        <form action="~/Home/SetCulture" method="POST">
+                            <select class="in-drop" name="Language" onchange="this.form.submit()">
+
+
+                                @if (Request.Cookies["_culture"] != null)
+                                {
+                                    if (Request.Cookies["_culture"].Value == "da-DK")
+                                    {
+                                        <option value="da-DK" selected="selected" class="in-of">Danish</option>
+                                        <option value="en-us" class="in-of">English</option>
+                                    }
+                                    else if (Request.Cookies["_culture"].Value == "en-US")
+                                    {
+                                        <option value="en-us" selected="selected" class="in-of">English</option>
+
+                                        <option value="da-DK" class="in-of">Danish</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="en-us" class="in-of">English</option>
+                                        <option value="da-DK" class="in-of">Danish</option>
+
+
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="en-us" selected="selected" class="in-of">English</option>
+
+                                    <option value="da-DK" class="in-of">Danish</option>
+                                }
+
+
+                            </select>
+
+                        </form>
+                    </div>
+
+
+
+
+                    <!---->
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="bottom-header">
+            <div class="container">
+                <div class="header-bottom-left">
+                    <div class="logo">
+                        <a href="~/Home/Index"> <img width="173" height="55" src="~/Content/images/logo1.jpg" alt=" " /></a>
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $("#txtSearch").autocomplete({
+                                source: '@Url.Action("GetStudents","Home")',
+                                minLength: 1
+                            });
+                        });
+                    </script>
+
+                    @using (Html.BeginForm("ListProducts", "Products", FormMethod.Get))
+                    {
+                        <div class="search">
+                            <input type="text" id="txtSearch" name="Search" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+                            <input type="submit" name="@Resources.Resources.Search" value="@Resources.Resources.Search">
+
+                        </div>
+                    }
+                    <div class="clearfix"> </div>
+                </div>
+                @Html.Partial("LoginPartial")
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="latter">
+                    <h6>@Resources.Resources.NewsLetter</h6>
+                    <div class="sub-left-right">
+                        <form>
+                            <input type="text" value="@Resources.Resources.EnterEmail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '@Resources.Resources.EnterEmail';}" />
+                            <input type="submit" value="@Resources.Resources.Subscribe" />
+                        </form>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="latter-right">
+                    <p>@Resources.Resources.FollowUS</p>
+                    <ul class="face-in-to">
+                        <li><a href="#"><span> </span></a></li>
+                        <li><a href="#"><span class="facebook-in"> </span></a></li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                @{Html.RenderAction("Footer", "Home");}
+
+
+                <div class="footer-bottom-cate cate-bottom">
+                    <h6>@Resources.Resources.OurAddress</h6>
+                    <ul>
+                        <li>Aliquam metus  dui. </li>
+                        <li>orci, ornareidquet</li>
+                        <li> ut,DUI.</li>
+                        <li>nisi, dignissim</li>
+                        <li>gravida at.</li>
+                        <li class="phone">PH : 6985792466</li>
+                        <li class="temp"> <p class="footer-class">@Resources.Resources.DevelopedBy<a href="#" target="_blank"</a>JK</p></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    @section scripts
+        {
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                var errormsg = "";
+                var amount = $('#txtAmount').val();
+                var from = $('#drpFrom').val();
+                var to = $('#drpTo').val();
+                $.ajax({
+                    type: "POST",
+                    url: "CurrencyConversion.asmx/ConvertGOOG",
+                    data: "{amount:" + amount + ",fromCurrency:'" + from + "',toCurrency:'" + to + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    beforeSend: function () {
+                        $('#results').html("Converting...");
+                    },
+                    success: function (data) {
+                        $('#results').html(amount + ' ' + from + '=' + data.d.toFixed(2) + ' ' + to);
+                    },
+                    error: function (jqXHR, exception) {
+                        if (jqXHR.status === 0) {
+                            errormsg = 'Not connect.\n Verify Network.';;
+                        } else if (jqXHR.status == 404) {
+                            errormsg = 'Requested page not found. [404]';;
+                        } else if (jqXHR.status == 500) {
+                            errormsg = 'Internal Server Error [500].';;
+                        } else if (exception === 'parsererror') {
+                            errormsg = 'Requested JSON parse failed.';;
+                        } else if (exception === 'timeout') {
+                            errormsg = 'Time out error.';;
+                        } else if (exception === 'abort') {
+                            errormsg = 'Ajax request aborted.';;
+                        } else {
+                            errormsg = 'Uncaught Error.';
+                        }
+                        $('#results').html(errormsg);
+                        $('<a href="#" >Click here for more details</a>').click(function () {
+                            alert(jqXHR.responseText);
+                        }).appendTo('#results');
+                    }
+
+                });
+            });
+
+        </script>
+
+    }
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

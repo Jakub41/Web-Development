@@ -1,0 +1,40 @@
+﻿@model ComputerWebShop.ViewModel.ViewModelProductList
+@using PagedList.Mvc
+@using ComputerWebShop.Helper
+
+
+    <div id="content">
+@using ComputerWebShop.Helper
+@foreach (var item in Model.Products)
+{
+        <div class="col-lg-4">
+            <div class="content_box">
+                <a href="~/Products/Details/@item.ID">
+                    <div class="left-grid-view grid-view-left">
+                        <img src="@item.PrimaryImage" class="img-responsive watch-right" alt="" />
+                        <div class="mask">
+                            <div class="info">@Resources.Resources.QuickView </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <h4><a href="~/Products/Details/@item.ID"> @item.ProductName</a></h4>
+            <p>@item.ProdDesc.Substring(0, 50) </p>
+
+            @{Html.RenderAction("OnlyDisplayRating", "ProductsRating", new { ProductID = @item.ID });}
+
+
+            @item.Price.ToCurrency()
+
+        </div>
+
+        }
+        <div class="clearfix"></div>
+
+        <div id='Paging' style="text-align:center">
+            Page @(Model.PageCount < Model.PageNo ? 0 : Model.PageNo) of @Model.PageCount
+            @Html.PagedListPager(Model.Products, page => Url.Action("ListProducts", new { page, }))
+
+
+        </div>
+    </div>

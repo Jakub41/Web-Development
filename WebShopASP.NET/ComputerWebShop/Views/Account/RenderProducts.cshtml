@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ComputerWebShop.Models.Cart>
+@using ComputerWebShop.Helper
+    @foreach (var item in Model)
+    {
+
+        <div class="col-lg-4">
+            <div class="content_box">
+                <a href="~/Products/Details/@item.Products.ID">
+                    <div class="left-grid-view grid-view-left">
+                        <img src="@item.Products.PrimaryImage" class="img-responsive watch-right" alt="" />
+                        <div class="mask">
+                            <div class="info">@Resources.Resources.QuickView</div>
+                        </div>
+                    </div>x
+                </a>
+            </div>
+            <h4><a href="~/Products/Details/@item.Products.ID"> @item.Products.ProductName</a></h4>
+            <p>@item.Products.ProdDesc.Substring(0, 50) </p>
+            @item.Products.Price.ToCurrency()
+        </div>
+
+
+    }
+
+   

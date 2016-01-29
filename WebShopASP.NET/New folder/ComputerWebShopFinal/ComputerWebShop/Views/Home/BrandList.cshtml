@@ -1,0 +1,14 @@
+﻿@model IEnumerable<ComputerWebShop.ViewModel.ViewModelGetBrand>
+
+
+
+
+@foreach (var item in Model) {
+     <li class="subitem1">
+
+        <a href="@Url.Action("ListProducts", "Products", new {  CategoryId = item.CategoryID, Brand = item.Brand })">@item.Brand</a>
+       
+    </li>
+}
+
+

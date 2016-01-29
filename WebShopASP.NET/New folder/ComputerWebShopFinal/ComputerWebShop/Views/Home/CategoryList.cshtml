@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ComputerWebShop.Models.Category>
+
+
+
+
+
+<div class="top-nav rsidebar span_1_of_left">
+    <h3 class="cate">CATEGORIES</h3>
+        <ul class="menu">
+
+
+            @foreach (var item in Model)
+            {
+                <li class="item1 ">
+                    <a href="#">
+
+                        <p>
+                            @item.CategoryName
+                                                    
+                        <img class="arrow-img" style="padding:1px" src="~/Content/images/arrow1.png" alt="" />
+                    </p>
+                    </a>
+
+                    <ul class="cute">
+                        
+                        <li class="subitem1">
+
+                            <a href="@Url.Action("ListProducts", "Products", new {  CategoryId = item.ID })">All Products</a>
+                            </li>
+                            @{
+                Html.RenderAction("BrandList", "Home", new { Categoryid = item.ID });
+                            }
+
+
+
+</ul>
+                </li>
+
+            }
+
+            <li class="menu-kid-left"><a href="contact.html">Contact us</a></li>
+        </ul>
+    </ul>
+</div>
+

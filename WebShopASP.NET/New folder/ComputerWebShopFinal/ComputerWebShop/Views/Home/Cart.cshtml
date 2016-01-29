@@ -1,0 +1,30 @@
+﻿@model ComputerWebShop.ViewModel.ViewModelCartToolTip
+
+<div class="cart">
+
+
+
+    <div class="popup">
+        <div class="row header">
+
+            <span>Items</span>
+            <span>Amount</span>
+        </div>
+        <div class="row items">
+            <span>@Model.TotolProducts</span>
+            @if (Model.Subtotal != 0) { 
+            <span>$@(Model.Subtotal + (Model.Subtotal*0.05)+10)</span>
+            }
+            else 
+            {
+                <span>Empty</span>
+            }
+        </div>
+
+        <div class="row checkoutnew">
+            <span><a href="~/ShoppingCart/ShowCart/">View Cart </a></span>
+            <span><a href="~/Order/Checkout">Check Out </a></span>
+
+        </div>
+    </div>
+</div>

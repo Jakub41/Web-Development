@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "RegisterConfirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="padding:20px" class="well-lg">
+
+    @if (ViewBag.Error != null)
+    {
+        <p style="color:red">Error occured or  link has expired </p>
+
+    }
+    else
+    {
+        <p style="color:green">Account has been successfully Verified, Enjoy shopping at Computer WebShop</p>
+    }
+
+</div>

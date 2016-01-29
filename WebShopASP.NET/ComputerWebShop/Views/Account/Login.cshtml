@@ -1,0 +1,70 @@
+﻿@model ComputerWebShop.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="account_grid">
+        <div class=" login-right">
+            <h3>@Resources.Resources.REGISTEREDCUSTOMERS</h3>
+            <p>@Resources.Resources.PleaseLogin</p>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+    @Html.AntiForgeryToken()
+    
+    @Html.ValidationSummary(true)
+                <div>
+                    <span>@Resources.Resources.EmailAddress<label>*</label></span>
+                    @Html.TextBoxFor(m => m.Email)
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+                <div>
+                    <span>@Resources.Resources.password<label>*</label></span>
+                    @Html.TextBoxFor(m => m.Password, new { type="password"})
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+    <input type="submit" value="@Resources.Resources.login" class="btn btn-default" />
+            }
+            <a class="forgot" href="@Url.Action("EnterEmail","Account")">@Resources.Resources.ForgotYourPassword</a>
+
+        </div>
+        <div class=" login-left">
+            <h3>@Resources.Resources.NEWCUSTOMERS</h3>
+            <p>@Resources.Resources.CreatingAnAccount</p>
+            <a class="acount-btn" href="~/Account/Register">@Resources.Resources.CreateanAccount</a>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="sub-cate">
+        @{ Html.RenderAction("CategoryList", "Home");}
+        <!--initiate accordion-->
+        <script type="text/javascript">
+            $(function () {
+                var menu_ul = $('.menu > li > ul'),
+			           menu_a = $('.menu > li > a');
+                menu_ul.hide();
+                menu_a.click(function (e) {
+                    e.preventDefault();
+                    if (!$(this).hasClass('active')) {
+                        menu_a.removeClass('active');
+                        menu_ul.filter(':visible').slideUp('normal');
+                        $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                    } else {
+                        $(this).removeClass('active');
+                        $(this).next().stop(true, true).slideUp('normal');
+                    }
+                });
+
+            });
+        </script>
+        @{Html.RenderAction("SidePanel", "Home");}
+        <a class="view-all all-product" href="~/Products/ListProducts">@Resources.Resources.VIEWALLPRODUCTS <span> </span></a>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

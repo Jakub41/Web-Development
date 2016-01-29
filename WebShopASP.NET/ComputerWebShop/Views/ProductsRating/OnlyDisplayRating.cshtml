@@ -1,0 +1,64 @@
+﻿@model ComputerWebShop.ViewModel.ProductRatingViewModel
+@{
+    Layout = null;
+}
+@if (Model.AverageRating == 5)
+{
+ <span class="rating">
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                </span>
+}
+else if (Model.AverageRating == 4)
+{
+     <span class="rating">
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                </span>
+}
+else if (Model.AverageRating == 3)
+{
+ <span class="rating">
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                </span>
+}
+else if (Model.AverageRating == 2)
+{
+     <span class="rating">
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                </span>
+}
+else if (Model.AverageRating == 1)
+{
+     <span class="rating">
+                    <label for="rating-input-1-5" class="rating-star"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                </span>
+}
+else 
+{
+     <span class="rating">
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                </span>
+}

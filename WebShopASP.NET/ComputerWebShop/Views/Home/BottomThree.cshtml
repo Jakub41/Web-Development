@@ -1,0 +1,27 @@
+﻿@model  IEnumerable<ComputerWebShop.Models.Products>
+@using ComputerWebShop.Helper
+
+@foreach (var item in Model)
+{
+
+      
+                <br />
+    <div class="col-md-4 chain-grid grid-top-chain">
+        <a href="~/Products/Details/@item.ID"><img class="img-responsive chain" src="@item.PrimaryImage" alt=" " /></a>
+        <span class="star"> </span>
+        <div class="grid-chain-bottom">
+            <h6><a href="single.html">@item.ProductName</a></h6>
+            <div class="star-price">
+                <div class="dolor-grid">
+                    <span class="actual">@item.Price.ToCurrency()</span>
+                    <span class="reducedfrom">@item.Price.ToCurrency()</span>
+
+                    @{Html.RenderAction("OnlyDisplayRating", "ProductsRating", new { ProductID = item.ID });}
+                </div>
+                <a class="now-get get-cart" href="~/Products/Details/@item.ID">@Resources.Resources.ADDTOCART</a>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+
+}

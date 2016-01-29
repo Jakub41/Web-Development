@@ -1,0 +1,44 @@
+﻿@model ComputerWebShop.ViewModel.OrderViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<div id="containerHolder">
+    <div id="container">
+       
+        <!-- // #sidebar -->
+        <!-- h2 stays for breadcrumbs -->
+        <h2><a href="~/Admin/Index">Admin</a> &raquo; <a href="#" class="active">Check Orders</a></h2>
+
+        <div id="main">
+            <form action="" class="jNice">
+                <h3>Order List</h3>
+                <table cellpadding="0" cellspacing="0">
+
+                    
+                    @foreach (var item in Model.cOrders)
+                    {
+
+                        <tr>
+                                <td>@item.Customer.FirstName, @item.Customer.LastName has Made and Order</td>
+                                <td class="action"><a href="@Url.Action("CheckOrders", "Admin", new { CartID= item.CartID })" class="view">View</a></td>
+                            </tr> 
+                    }
+                </table>
+                
+                
+                <!-- / end client details section -->
+                
+                
+                
+            </form>
+        </div>
+        <!-- // #main -->
+
+        <div class="clear"></div>
+    </div>
+    <!-- // #container -->
+</div>
+

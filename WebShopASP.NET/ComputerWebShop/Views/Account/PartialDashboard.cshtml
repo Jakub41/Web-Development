@@ -1,0 +1,469 @@
+﻿@model ComputerWebShop.ViewModel.OrderViewModel
+<script src="~/ValidationScript/jquery.min.js"></script>
+
+<script src="~/ValidationScript/formValidation.js"></script>
+
+<script src="~/ValidationScript/bootstrap.js"></script>
+<style>
+
+    /* Padding - just for asthetics on Bootsnipp.com */
+    body {
+        margin-top: 20px;
+    }
+
+    /* CSS for Credit Card Payment form */
+    .credit-card-box .panel-title {
+        display: inline;
+        font-weight: bold;
+    }
+
+    .credit-card-box .form-control.error {
+        border-color: red;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+    }
+
+    .credit-card-box label.error {
+        font-weight: bold;
+        color: red;
+        padding: 2px 8px;
+        margin-top: 2px;
+    }
+
+    .credit-card-box .payment-errors {
+        font-weight: bold;
+        color: red;
+        padding: 2px 8px;
+        margin-top: 2px;
+    }
+
+    .credit-card-box label {
+        display: block;
+    }
+    /* The old "center div vertically" hack */
+    .credit-card-box .display-table {
+        display: table;
+    }
+
+    .credit-card-box .display-tr {
+        display: table-row;
+    }
+
+    .credit-card-box .display-td {
+        display: table-cell;
+        vertical-align: middle;
+        width: 50%;
+    }
+    /* Just looks nicer */
+    .credit-card-box .panel-heading img {
+        min-width: 180px;
+    }
+</style>
+@if (ViewBag.panel == "edit") 
+{
+  
+<div id="cont">
+@using (Html.BeginForm("EditCustomerDetails", "Account", FormMethod.Post, new { id = "defaultForm" }))
+{
+    <br /> 
+    <br />  
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal well col-lg-6">
+        <h4>@Resources.Resources.Customer</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <input type="hidden" name="ID" value="@Model.Customer.ID" />
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">@Resources.Resources.FirstName</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" value="@Model.Customer.FirstName" name="firstName" />
+            </div>
+
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Last Name</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" value="@Model.Customer.LastName" name="lastName" />
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">@Resources.Resources.LastName</label>
+            <div class="col-md-6">
+                @Html.DropDownListFor(m => m.Customer.Gender, new SelectList(
+                  new List<Object>{
+                       new { value=@Resources.Resources.Male, text = "Male"  },
+                       new { value=@Resources.Resources.Female, text = "Female" }
+                    },
+                  "value",
+                  "text",
+2), new { @class = "form-control", tabindex = "2" ,name="Gender"})            </div>
+
+        </div>
+       
+      
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">@Resources.Resources.Address</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" value="@Model.Customer.Address" name="Address" />
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">@Resources.Resources.PhoneNumber</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" value="@Model.Customer.PhoneNumber" name="PhoneNumber" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">@Resources.Resources.PostalCode</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" value="@Model.Customer.PostalCode" name="postalCode" />
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">@Resources.Resources.City</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" value="@Model.Customer.City" name="City" />
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">@Resources.Resources.State</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" value="@Model.Customer.State" name="State" />
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">@Resources.Resources.Country</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" value="@Model.Customer.Country" name="Country" />
+            </div>
+
+        </div>
+
+
+
+        <div class="product-left">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="@Resources.Resources.Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+</div>
+    
+
+}
+
+
+
+
+
+else if (ViewBag.panel == "paymentinfo")
+{
+<br />
+               <br />
+    using (Html.BeginForm("UpdatePayment", "Account", FormMethod.Post, new { id = "PaymentForm" }))
+{
+    <div class="s col-md-4">
+
+
+        <!-- CREDIT CARD FORM STARTS HERE -->
+        <div class="panel panel-default credit-card-box">
+            <div class="panel-heading display-table">
+                <div class="row display-tr">
+                    <h3 class="panel-title display-td">@Resources.Resources.PaymentDetails</h3>
+                    <div class="display-td">
+                        <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <form role="form" id="payment-form">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="cardNumber">@Resources.Resources.CardNumber</label>
+                                <div class="input-group">
+                                    <input type="tel"
+                                           class="form-control"
+                                           name="CardNumber"
+                                           placeholder="@Resources.Resources.ValidCardNumber"
+                                           autocomplete="cc-number"
+                                           required autofocus />
+                                    <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="cardExpiry"><span class="hidden-xs">@Resources.Resources.EXPIRATION</span><span class="visible-xs-inline">EXP</span> @Resources.Resources.Date</label>
+                                <input type="tel"
+                                       class="form-control"
+                                       name="cardExpiry"
+                                       placeholder="MM / YY"
+                                       autocomplete="cc-exp"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-xs-5 col-md-5 pull-right">
+                            <div class="form-group">
+                                <label for="cardCVC">@Resources.Resources.Code</label>
+                                <input type="tel"
+                                       class="form-control"
+                                       name="SecurityCode"
+                                       placeholder="CVC"
+                                       autocomplete="cc-csc"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button class="btn btn-success btn-lg btn-block" type="submit">@Resources.Resources.AddCard</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+       
+    </div>
+}
+
+    <script>
+        // PayINfoValidation
+        $(document).ready(function () {
+        $('#PaymentForm').formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                CardNumber: {
+
+                    validators: {
+                        creditCard: {
+                            message: '@Resources.Resources.CreditCartInvalid'
+                        },
+                        notEmpty: {
+                            message: '@Resources.Resources.CreditCardRequired'
+                        }
+                    }
+                },
+                SecurityCode: {
+
+                    validators: {
+                        notEmpty: {
+                            message: '@Resources.Resources.SecurityNumberRequired'
+                        },
+                        numeric: {
+                            message: '@Resources.Resources.NotNumericValue'
+                        }
+                    }
+                }
+            }
+        });
+        });
+    </script>
+     
+}
+
+else if (ViewBag.panel == "productsbought")
+{
+    <h2>@Resources.Resources.ProductsOrdered </h2>
+    <div id="cont">
+        <div class=" col-lg-6">
+
+            @foreach (var item in Model.cOrders)
+            { 
+                <div id="cont">
+                  
+
+                    <div class="product-left">
+
+                        @{Html.RenderAction("RenderProducts", "Account", new { CartID = item.CartID });}
+
+                    </div>
+                </div>
+
+
+            }
+        </div>
+    </div>
+
+
+}
+else if (ViewBag.panel == "ListPaymentInfo")
+{
+    <div id="cont" class="col-lg-5">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName(Resources.Resources.CardNumber)
+                </th>
+                <th>
+                    @Html.DisplayName(@Resources.Resources.EXPIRATIONDATE)
+                </th>
+                <th>
+                    @Html.DisplayName(@Resources.Resources.Code)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.cPaymentInfo)
+            {
+
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CartNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpiryDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SecurityCode)
+                    </td>
+                    
+
+                </tr>
+
+            }
+
+        </table>
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        // Generate a simple captcha
+
+
+        $('#defaultForm').formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                firstName: {
+
+                    validators: {
+                        notEmpty: {
+                            message: '@Resources.Resources.FirstNameRequired'
+                        }
+                    }
+                },
+                lastName: {
+                    validators: {
+                        notEmpty: {
+                            message: '@Resources.Resources.LastNameRequired'
+                        }
+                    }
+                },
+                Address: {
+                    validators:
+                        {
+                            notEmpty:
+                                {
+                                    message: '@Resources.Resources.AddressRequired'
+                                }
+                        }
+                },
+                PhoneNumber:
+  {
+      validators:
+          {
+              notEmpty:
+                  {
+                      message: '@Resources.Resources.PhoneNumberRequired'
+                  },
+              phone: {
+                  message: '@Resources.Resources.PhoneNumberValidated'
+              }
+
+
+
+          }
+  },
+                PostalCode:
+     {
+         validators:
+         {
+             notEmpty:
+                 {
+                     message: '@Resources.Resources.PostalCodeRequired'
+                 },
+             zipCode: {
+                 message: '@Resources.Resources.PhoneNumberValidated'
+             }
+         }
+     },
+
+                City:
+     {
+         validators:
+         {
+             notEmpty:
+                 {
+                     message: '@Resources.Resources.CityRequired'
+                 }
+         }
+     }
+                    ,
+
+                State:
+      {
+          validators:
+          {
+              notEmpty:
+                  {
+                      message: '@Resources.Resources.StateRequired'
+                  }
+          }
+      }
+                    ,
+
+                Country:
+      {
+          row: '.col-sm-4',
+          validators:
+          {
+              notEmpty:
+                  {
+                      message: '@Resources.Resources.Country'
+                  }
+          }
+      }
+
+
+
+
+
+
+
+
+            }
+        });
+
+        
+    });
+</script> 

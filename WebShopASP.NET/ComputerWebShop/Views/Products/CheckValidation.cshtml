@@ -1,0 +1,77 @@
+﻿@model ComputerWebShop.ViewModel.CheckValidation
+
+@{
+}
+
+
+
+    
+    <script src="~/ValidationScript/jquery.min.js"></script>
+
+    <script src="~/ValidationScript/formValidation.js"></script>
+
+    <script src="~/ValidationScript/bootstrap.js"></script>
+
+    <h2>CheckValidation</h2>
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="page-header">
+                    <h2>Bootstrap Form</h2>
+                </div>
+                <form id="defaultForm" method="post" class="form-horizontal" >
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Full name</label>
+                        <div class="col-sm-4">
+                            
+                            <input type="text" class="form-control" name="firstName" placeholder="First name" />
+                        </div>
+                       
+                    </div>
+                   
+                    
+                    
+                    
+                    
+                    <div class="form-group">
+                        <div class="col-sm-9 col-sm-offset-3">
+                            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Generate a simple captcha
+
+
+            $('#defaultForm').formValidation({
+                framework: 'bootstrap',
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    firstName: {
+
+                        validators: {
+                            notEmpty: {
+                                message: 'The first name is required'
+                            }
+                        }
+                    }
+
+
+
+
+
+
+                }
+            });
+        });
+    </script>

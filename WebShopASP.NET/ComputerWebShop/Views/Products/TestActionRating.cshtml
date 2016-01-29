@@ -1,0 +1,46 @@
+﻿@model ComputerWebShop.ViewModel.ProductRatingViewModel
+@using Microsoft.AspNet.Identity
+@{
+    Layout = null;  
+}
+<link href="~/rating_1_0/rating.css" rel="stylesheet" />
+
+<script src="~/rating_1_0/rating.js"></script>
+
+<script>
+
+        $(function () {
+            $('.rating').attr('value', '@Model.AverageRating');
+
+            $('.rating').rating();
+            
+            $('#form1').click(function () {
+
+                var data = {};
+                data.rating = $("#rating1").val();
+                $.post("@Url.Action("TestRateIt", "Home")",data,function(data)
+                {
+                    $('.rating').attr('value', data);
+                    alert("d");
+                });
+            });
+
+            $('#rating12').click(function () {
+                
+                alert("d");
+            });
+        });
+</script>
+
+@if (User.Identity.IsAuthenticated == true && User.IsInRole("Customers")) { 
+<form id="form1" method="post">
+    @Html.HiddenFor(model => Model.ID, new  { name = "ProductID" })
+    <input type="text" id="rating1" name="rating" class="rating rating5" />
+</form>
+}
+else
+{
+    <input type="text" name="rating" id="rating12" value="@Model.AverageRating" readonly="readonly" class="rating rating5" />
+    <p>Please @Html.ActionLink("Login","Login","Account") to rate </p>
+}
+    

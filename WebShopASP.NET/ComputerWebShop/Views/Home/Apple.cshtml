@@ -1,0 +1,25 @@
+﻿@model  IEnumerable<ComputerWebShop.Models.Products>
+@foreach (var item in Model)
+{
+
+    <a href="~/Products/ListProducts/ListProducts?CategoryId=1&Brand=Apple">
+        <div class="col-md-6 con-sed-grid sed-left-top">
+            <div class=" elit-grid">
+                <h4>@item.ProductName</h4>
+                <label>@Resources.Resources.FORALLPURCHASE</label>
+                <p>@item.ProdDesc.Substring(0, 30) </p>
+                <span>
+                    @{Html.RenderAction("OnlyDisplayRating", "ProductsRating", new { ProductID = item.ID });}
+            </span> 
+                <br />
+
+                <span class="on-get">@Resources.Resources.GETNOW</span>
+            </div>
+            <img class="img-responsive shoe-left" width="150px" src="@item.PrimaryImage" alt=" " />
+
+
+
+            <div class="clearfix"> </div>
+        </div>
+    </a>
+}

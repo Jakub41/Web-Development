@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllProducts" xml:space="preserve">
+    <value>alle produkter</value>
+  </data>
+  <data name="categories" xml:space="preserve">
+    <value>KATEGORIER</value>
+  </data>
+  <data name="Contactus" xml:space="preserve">
+    <value>Kontakt os</value>
+  </data>
+  <data name="CreateanAccount" xml:space="preserve">
+    <value>Opret en konto</value>
+  </data>
+  <data name="CreatingAnAccount" xml:space="preserve">
+    <value>Ved at oprette en konto i vores shop , vil du være i stand til at bevæge sig gennem købsprocessen hurtigere , gemme flere leveringsadresser , se og spore dine ordrer på din konto og meget mere .</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email adresse</value>
+  </data>
+  <data name="EmailInvalid" xml:space="preserve">
+    <value>E-mail er ikke gyldig</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>E-mail er påkrævet</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>Glemt din adgangskode?</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>gratis</value>
+  </data>
+  <data name="live247" xml:space="preserve">
+    <value>24x7 levende</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Log på</value>
+  </data>
+  <data name="Logoff" xml:space="preserve">
+    <value>Log af</value>
+  </data>
+  <data name="NEWCUSTOMERS" xml:space="preserve">
+    <value>Nye kunder</value>
+  </data>
+  <data name="over500" xml:space="preserve">
+    <value>på ordre over 500</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>løsen</value>
+  </data>
+  <data name="PleaseLogin" xml:space="preserve">
+    <value>Hvis du har en konto hos os, skal du logge ind.</value>
+  </data>
+  <data name="REGISTEREDCUSTOMERS" xml:space="preserve">
+    <value>registrerede kunder</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>søgning</value>
+  </data>
+  <data name="Shipping" xml:space="preserve">
+    <value>Forsendelse</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Min ASP.NET Application</value>
+  </data>
+  <data name="VIEWALLPRODUCTS" xml:space="preserve">
+    <value>Vis alle produkter</value>
+  </data>
+  <data name="YOURACCOUNT" xml:space="preserve">
+    <value>DIN KONTO</value>
+  </data>
+  <data name="ADDTOCART" xml:space="preserve">
+    <value>LÆG I INDKØBSKURV</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>beløb</value>
+  </data>
+  <data name="CheckOut" xml:space="preserve">
+    <value>Tjek</value>
+  </data>
+  <data name="DevelopedBy" xml:space="preserve">
+    <value>udviklet af</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>tom</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Indtast e-mail</value>
+  </data>
+  <data name="FLAT0FF" xml:space="preserve">
+    <value>flad 50% rabat</value>
+  </data>
+  <data name="FollowUS" xml:space="preserve">
+    <value>Følg os</value>
+  </data>
+  <data name="FORALLPURCHASE" xml:space="preserve">
+    <value>FOR ALLE KØB</value>
+  </data>
+  <data name="GETNOW" xml:space="preserve">
+    <value>FÅ NU</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>vare</value>
+  </data>
+  <data name="LatestProducts" xml:space="preserve">
+    <value>nyeste produkter</value>
+  </data>
+  <data name="NewsLetter" xml:space="preserve">
+    <value>nyhedsbrev</value>
+  </data>
+  <data name="OurAddress" xml:space="preserve">
+    <value>vores adresse</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Tilmeld</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Tilmeld</value>
+  </data>
+  <data name="TOPBRANDS" xml:space="preserve">
+    <value>TOP MÆRKER</value>
+  </data>
+  <data name="TopProducts" xml:space="preserve">
+    <value>top produkter</value>
+  </data>
+  <data name="VALUE" xml:space="preserve">
+    <value>VÆRDI</value>
+  </data>
+  <data name="ViewCart" xml:space="preserve">
+    <value>Se indkøbsvogn</value>
+  </data>
+  <data name="AddCard" xml:space="preserve">
+    <value>Tilføj Card</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>adresse</value>
+  </data>
+  <data name="AddressRequired" xml:space="preserve">
+    <value>Adresse er påkrævet</value>
+  </data>
+  <data name="BillingInformation" xml:space="preserve">
+    <value>faktureringsoplysninger</value>
+  </data>
+  <data name="CardNumber" xml:space="preserve">
+    <value>KORT NUMMER</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>by</value>
+  </data>
+  <data name="CityRequired" xml:space="preserve">
+    <value>Byen er påkrævet</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>kort</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>kommentar</value>
+  </data>
+  <data name="CountryRequired" xml:space="preserve">
+    <value>landet er påkrævet</value>
+  </data>
+  <data name="CreditCardRequired" xml:space="preserve">
+    <value>Kreditkort Nødvendig</value>
+  </data>
+  <data name="creditCards" xml:space="preserve">
+    <value>kredit kort</value>
+  </data>
+  <data name="CreditCartInvalid" xml:space="preserve">
+    <value>kreditkortnummeret er ikke gyldigt</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>kunden</value>
+  </data>
+  <data name="DATE" xml:space="preserve">
+    <value>DATE</value>
+  </data>
+  <data name="EditDetails" xml:space="preserve">
+    <value>Rediger oplysninger</value>
+  </data>
+  <data name="emptyCart" xml:space="preserve">
+    <value>Indkøbskurven er tom</value>
+  </data>
+  <data name="EXPIRATION" xml:space="preserve">
+    <value>UDLØB</value>
+  </data>
+  <data name="EXPIRATIONDATE" xml:space="preserve">
+    <value>UDLØBSDATO</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>kvinde</value>
+  </data>
+  <data name="FillAllDetails" xml:space="preserve">
+    <value>Udfyld venligst alle Field og klik på Opdater</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>første
+navn</value>
+  </data>
+  <data name="FirstNameRequired" xml:space="preserve">
+    <value>Det første navn er påkrævet</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>køn</value>
+  </data>
+  <data name="GrandTotal" xml:space="preserve">
+    <value>Grand Total</value>
+  </data>
+  <data name="hightolow" xml:space="preserve">
+    <value>Pris : Høj Lav</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Billede</value>
+  </data>
+  <data name="itemsinstock" xml:space="preserve">
+    <value>Varer på lager</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>sidste
+navn</value>
+  </data>
+  <data name="LastNameRequired" xml:space="preserve">
+    <value>Den Efternavn er påkrævet</value>
+  </data>
+  <data name="Latest" xml:space="preserve">
+    <value>seneste</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Mand</value>
+  </data>
+  <data name="NotNumericValue" xml:space="preserve">
+    <value>Værdien er ikke numerisk</value>
+  </data>
+  <data name="PaymentDetails" xml:space="preserve">
+    <value>Betalingsoplysninger</value>
+  </data>
+  <data name="PaymentInformation" xml:space="preserve">
+    <value>Betalingsoplysninger</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Telefonnummer</value>
+  </data>
+  <data name="PhoneNumberRequired" xml:space="preserve">
+    <value>Phone Number is required</value>
+  </data>
+  <data name="PhoneNumberValidated" xml:space="preserve">
+    <value>Værdien er ikke gyldig % s telefonnummer</value>
+  </data>
+  <data name="please" xml:space="preserve">
+    <value>venligst</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>indlæg</value>
+  </data>
+  <data name="PostalCodeRequired" xml:space="preserve">
+    <value>Den Postnummer er påkrævet</value>
+  </data>
+  <data name="PostalCodeValidated" xml:space="preserve">
+    <value>Værdien er ikke gyldig % s postnummer</value>
+  </data>
+  <data name="PostBy" xml:space="preserve">
+    <value>indlæg af</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>pris</value>
+  </data>
+  <data name="ProductDetails" xml:space="preserve">
+    <value>Produktdetaljer</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>produkter</value>
+  </data>
+  <data name="ProductsOrdered" xml:space="preserve">
+    <value>produkter Bestilte</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>mængde</value>
+  </data>
+  <data name="QuickView" xml:space="preserve">
+    <value>hurtig udsigt</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>fjerne</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="SecurityNumberRequired" xml:space="preserve">
+    <value>Sikkerhedsrådet Number er påkrævet</value>
+  </data>
+  <data name="ShareProduct" xml:space="preserve">
+    <value>Del produkt</value>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>slags</value>
+  </data>
+  <data name="StartoProduct" xml:space="preserve">
+    <value>Stjerne til dette produkt</value>
+  </data>
+  <data name="StateRequired" xml:space="preserve">
+    <value>Staten er forpligtet</value>
+  </data>
+  <data name="submittingagain" xml:space="preserve">
+    <value>og prøv at sende igen</value>
+  </data>
+  <data name="subtotal" xml:space="preserve">
+    <value>sub alt</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>skat</value>
+  </data>
+  <data name="thankyouforrate" xml:space="preserve">
+    <value>Tak for din vurdering</value>
+  </data>
+  <data name="torate" xml:space="preserve">
+    <value>at klassificere</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>samlede</value>
+  </data>
+  <data name="TotalReviews" xml:space="preserve">
+    <value>Total anmeldelser</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>opdatering</value>
+  </data>
+  <data name="UpdateCustomerInfo" xml:space="preserve">
+    <value>Opdatér venligst Kunden og betaling formular før du indsender til kassen</value>
+  </data>
+  <data name="USERINFO" xml:space="preserve">
+    <value>bruger Info</value>
+  </data>
+  <data name="ValidCardNo" xml:space="preserve">
+    <value>Gyldig Kortnummer</value>
+  </data>
+  <data name="ValidCardNumber" xml:space="preserve">
+    <value>Gyldig Kortnummer</value>
+  </data>
+  <data name="YouhaveRated" xml:space="preserve">
+    <value>Du har Bedømmelse</value>
+  </data>
+</root>

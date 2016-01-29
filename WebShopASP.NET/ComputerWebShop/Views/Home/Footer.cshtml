@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ComputerWebShop.Models.Products>
+
+
+    
+<div class="footer-bottom-cate">
+    <h6>@Resources.Resources.TopProducts</h6>
+    <ul>
+@foreach (var item in Model)
+{
+
+      <li><a href="~/Products/Details/@item.ID">@item.ProductName</a></li>
+       
+}
+    </ul>
+</div>
+
+<div class="footer-bottom-cate">
+    <h6>@Resources.Resources.TOPBRANDS</h6>
+    <ul>
+        @foreach (var item in Model)
+        {
+
+        <li><a href="#">@item.Brand</a></li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,66 @@
+﻿@model ComputerWebShop.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "EnterEmail";
+   
+}
+
+
+<div class="container">
+    @if (ViewBag.sent == "successfull")
+    {
+    <div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>Successfull!</strong>Click on email<a href="#" class="alert-link">to retirieve your password</a>.
+</div>
+    }
+    @if (ViewBag.sent == "notexist")
+{
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Error!</strong>Email Doesn't exist<a href="#" class="alert-link">to retirieve your password</a>.
+    </div>
+}
+@using (Html.BeginForm("EnterEmail", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new {name="txtEmail",type="email", @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+    </div>
+ 
+    
+       <br />
+    <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Send" class="btn btn-default" />
+                    </div>
+                </div>
+}
+
+</div>
+
+    @*<!-- CSS dependencies -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootbox.js"></script>
+
+    <p>Content here. <a class="alert" href=#>Alert!</a></p>
+
+    <!-- JS dependencies -->
+    <
+
+    <!-- bootbox code -->
+    <script src="bootbox.min.js"></script>
+    <script>
+        $(document).on("click", ".alert", function (e) {
+            bootbox.alert("Hello world!", function () {
+                console.log("Alert Callback");
+            });
+        });
+    </script>*@
+

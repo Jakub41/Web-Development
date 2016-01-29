@@ -1,0 +1,49 @@
+﻿@model ComputerWebShop.ViewModel.CartViewModel
+@using Microsoft.AspNet.Identity
+
+
+@{
+    ViewBag.Title = "ShowCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.Empty != true) 
+{ 
+<div class="container" style="padding:100px">
+    <div class="shopping-cart">
+        <div class="column-labels">
+            <label class="product-image">@Resources.Resources.Image</label>
+            <label class="product-details">@Resources.Resources.Products</label>
+            <label class="product-price">@Resources.Resources.Price</label>
+            <label class="product-quantity">@Resources.Resources.Quantity</label>
+            <label class="product-removal">@Resources.Resources.Remove</label>
+            <label class="product-line-price">@Resources.Resources.Total</label>
+        </div>
+    </div>
+
+       @Html.Partial("CartPartial")
+
+        
+    @if (Request.IsAuthenticated)
+{
+
+
+    <a class="checkout" href="~/Order/Checkout">@Resources.Resources.CheckOut</a>
+}
+    else
+    {
+        <a class="checkout" style="text" href="~/Account/Login?ReturnUrl=%2FShoppingCart%2FShowCart"> @Resources.Resources.login</a>
+    }</div>
+    <script>
+        $(document).ready(function ()
+        {
+           
+        });
+
+    </script>
+    <script src="~/Scripts/index.js"></script>
+}
+else
+{
+<p>@Resources.Resources.emptyCart</p>
+
+}

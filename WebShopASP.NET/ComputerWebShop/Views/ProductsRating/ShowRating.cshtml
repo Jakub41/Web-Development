@@ -1,0 +1,70 @@
+﻿@model ComputerWebShop.ViewModel.ProductRatingViewModel
+@using Microsoft.AspNet.Identity
+@using ComputerWebShop.Helper
+@{
+    Layout = null;
+}
+
+
+
+@if (User.Identity.IsAuthenticated == true)
+{
+    if (Model.CanUserVote == true)
+    {   
+
+        <form id="form1" method="post">
+            @Html.HiddenFor(model => model.ProductID, new { id = "ProductID" })
+            <input type="text" id="rating1" name="rating"   class=" rating rating5" />
+</form>
+                <p id="Voters">@Resources.Resources.TotalReviews: <span>@Model.Voters </span></p>  
+    
+    <div id="thankyou"></div>
+    }
+    else
+    {
+      <input type="text"  id="rating1"  name="rating" readonly="readonly" class="rating rating5" />
+    <div><p>@Resources.Resources.TotalReviews: @Model.Voters</p>     <p>@Resources.Resources.YouhaveRated @Model.UserRating @Resources.Resources.StartoProduct</p></div>
+    }
+}
+else
+{
+    <span id="rating12"><input type="text" name="rating" readonly="readonly" class="rating rating5" /> @Resources.Resources.TotalReviews:@Model.Voters   </span> <p></p>   
+    <p>@Resources.Resources.please @Html.ActionLink(@Resources.Resources.login, "Login", "Account") @Resources.Resources.torate </p>
+}
+
+
+
+<script>
+
+    $(function () {
+        $('.rating').attr('value', '@Model.AverageRating');
+        $('#test').click(function () {
+            $('.rating').attr('readonly', true);
+
+        });
+        $('.rating').rating();
+        
+        $('#rating12').click(function () {
+
+            window.location = "@Url.Action("Login","Account")";
+        });
+        $('#form1').click(function () {
+
+            var data = {};
+            data.ProductRatings = $("#rating1").val();
+            data.ProductID = $("#ProductID").val();
+            $.post("@Url.Action("SaveRating", "ProductsRating")", data, function (data) {
+                
+                $('.rating').attr('value', data.AverageRating);
+                $('#Voters').text(data.Voters);
+                $('.rating').remove();
+                    $('#thankyou').append("<p style='color:red'> @Resources.Resources.thankyouforrate </p>");
+                    $('#thankyou').prop("disabled", true);
+                    $('#Voters').prop('disabled', true);
+                
+            });
+        });
+
+
+    });
+</script>

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "ConfirmAccount";
+}
+
+<div class="container" style="padding:20px;">
+
+    
+    @if (ViewBag.EmailSent != null) 
+    {
+    
+    <div  style="color:green">@ViewBag.EmailSent</div>
+        <br />
+    }
+    <div class="well"><p style="color:red">Please Confirm you Account Before Proceeding any Futher or Click @Html.ActionLink("Here", "ResendEmail", "Account") to resend Email </p></div>
+</div>

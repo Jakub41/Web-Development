@@ -1,0 +1,45 @@
+﻿@model ComputerWebShop.Models.Products
+@using ComputerWebShop.Helper
+
+    
+
+<div class="shoes-grid">
+    <a href="~/Products/Details/@Model.ID">
+        <div class="wrap-in">
+            <div class="wmuSlider example1 slide-grid">
+                <div class="wmuSliderWrapper">
+
+
+                    <article style="position: absolute; width: 100%; opacity: 0;">
+                        <div class="banner-matter">
+                            <div class="col-md-5 banner-bag">
+                                <img class="img-responsive " src="@Model.PrimaryImage" alt=" " />
+                            </div>
+                            <div class="col-md-7 banner-off">
+                                <h2>@Resources.Resources.FLAT0FF.ToUpper()</h2>
+                                <label>@Resources.Resources.FORALLPURCHASE <b>@Resources.Resources.VALUE</b></label>
+                                <p>@Model.ProdDesc.Substring(1,50) </p>
+                                <span class="on-get">@Resources.Resources.GETNOW</span>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+
+                    </article>
+
+                </div>
+    </a>
+    <ul class="wmuSliderPagination">
+        <li><a href="#" class="">0</a></li>
+        <li><a href="#" class="">1</a></li>
+        <li><a href="#" class="">2</a></li>
+    </ul>
+    
+    <script src="~/Scripts/jquery.wmuSlider.js"></script>
+    <script>
+        $('.example1').wmuSlider();
+    </script>
+</div>
+
+
+

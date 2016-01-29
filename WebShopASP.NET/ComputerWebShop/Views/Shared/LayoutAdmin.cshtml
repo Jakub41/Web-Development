@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/transdmin.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery_.js"></script>
+    <script src="~/Scripts/jNice.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- h1 tag stays for the logo, you can use the a tag for linking the index page -->
+        <h1><a  href="~/Home/Index"><img width="100" src="~/Content/images/logo1.jpg" /></a></h1>
+
+        <!-- You can name the links with lowercase, they will be transformed to uppercase by CSS, we prefered to name them with uppercase to have the same effect with disabled stylesheet -->
+        <ul id="mainNav">
+            <li><a href="~/Admin/Index">Orders</a></li> <!-- Use the "active" class for the active menu item  -->
+            <li><a href="~/Admin/ListProducts">List Products</a></li>
+            <li><a href="~/Admin/AdminList">Add Admin</a></li>
+            <li><a href="~/Admin/CreateCategory">Add Product Category</a></li>
+
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            {
+
+
+
+            @Html.AntiForgeryToken()
+
+
+            <li class="logout"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            }
+        </ul>
+        <!-- // #end mainNav -->
+
+        
+        @RenderBody()
+        <!-- // #containerHolder -->
+
+        <p id="footer">Computer Web Shop Admin Panel. <a href="#">All right reserved.</a></p>
+    </div>
+</body>
+</html>

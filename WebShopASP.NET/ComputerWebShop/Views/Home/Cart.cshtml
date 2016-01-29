@@ -1,0 +1,31 @@
+﻿@model ComputerWebShop.ViewModel.ViewModelCartToolTip
+@using ComputerWebShop.Helper
+
+<div class="cart">
+
+
+
+    <div class="popup">
+        <div class="row header">
+
+            <span>@Resources.Resources.Item</span>
+            <span>@Resources.Resources.Amount</span>
+        </div>
+        <div class="row items">
+            <span>@Model.TotolProducts</span>
+            @if (Model.Subtotal != 0) {     
+            <span>@Model.Total.ToCurrency()</span>
+            }
+            else 
+            {
+                <span>@Resources.Resources.Empty</span>
+            }
+        </div>
+
+        <div class="row checkoutnew">
+            <span><a href="~/ShoppingCart/ShowCart/">@Resources.Resources.ViewCart </a></span>
+            <span><a href="~/Order/Checkout">@Resources.Resources.CheckOut </a></span>
+
+        </div>
+    </div>
+</div>

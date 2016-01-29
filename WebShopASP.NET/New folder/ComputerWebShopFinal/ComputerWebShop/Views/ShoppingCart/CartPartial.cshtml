@@ -1,0 +1,58 @@
+﻿@model ComputerWebShop.ViewModel.CartViewModel
+
+
+    <div id=" cont"> 
+@foreach (var item in Model.Carts)
+{
+        <div  class="product">
+            <div class="product-image">
+                <img src="@item.Products.PrimaryImage">
+            </div>
+            <div class="product-details">
+                <a href="~/Products/Details/@item.ProductID"><div class="product-title">@item.Products.ProductName</div></a>
+                <p class="product-description"></p>
+            </div>
+            <div class="product-price">@item.Products.Price</div>
+            <div class="product-quantity">
+                @using(Html.BeginForm("ShowCart","ShoppingCart"))
+            {
+                    <input type="number" hidden="hidden" name="productid" value="@item.ProductID" />
+                    <input type="number" name="quantity" value="@item.Quantity" onblur="this.form.submit();" max="20" min="1">
+            }
+            </div>
+            <div class="product-removal">
+                <button class="remove-product">
+                    @Ajax.ActionLink("Remove", "DeleteItem",new { id= item.ID},
+                    new AjaxOptions
+                    {
+                    HttpMethod = "GET", // HttpMethod to use, GET or POST
+                    UpdateTargetId = "cont", // ID of the HTML element to update
+                    InsertionMode = InsertionMode.Replace, // Replace the existing contents
+
+
+                    }
+                    )
+                </button>
+            </div>
+            <div class="product-line-price">@item.Price</div>
+        </div>
+        }
+        <div class="totals">
+            <div class="totals-item">
+                <label>Subtotal</label>
+                <div class="totals-value" id="cart-subtotal">@Model.Subtotal</div>
+            </div>
+            <div class="totals-item">
+                <label>Tax (5%)</label>
+                <div class="totals-value" id="cart-tax">@Model.Tax</div>
+            </div>
+            <div class="totals-item">
+                <label>Shipping</label>
+                <div class="totals-value" id="cart-shipping">10</div>
+            </div>
+            <div class="totals-item totals-item-total">
+                <label>Grand Total</label>
+                <div class="totals-value" id="cart-total">@Model.TotalAmount</div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    function ClearResults() {
+        $("#cont").empty();
+    }
+
+</script>
+<div class="container">
+    <div class="col-lg-offset-1">
+        <div id="divloading" class="col-md-offset-6" style="display:none;">
+            <img src="~/Content/images/loading.gif" />
+        </div>
+        @Html.Partial("PartialDashboard")
+
+    </div>
+    <div class="pull-right  sub-cate">
+        <div class=" top-nav rsidebar span_1_of_left">
+            <h3 class="cate">@Resources.Resources.USERINFO</h3>
+            <ul class="menu">
+
+
+
+
+                <ul class="kid-menu ">
+                    <li></li>
+                    <li>
+                        @Ajax.ActionLink(@Resources.Resources.EditDetails, "EditCustomerDetails",
+
+                            new AjaxOptions
+                    {
+                        HttpMethod = "GET", // HttpMethod to use, GET or POST
+                        UpdateTargetId = "cont", // ID of the HTML element to update
+                        InsertionMode = InsertionMode.Replace, // Replace the existing contents
+                        LoadingElementId = "divloading"
+
+                    })
+                    </li></li>
+                    <li>
+                        @Ajax.ActionLink(@Resources.Resources.Products, "ProductsBought",
+
+                            new AjaxOptions
+                    {
+                        HttpMethod = "GET", // HttpMethod to use, GET or POST
+                        UpdateTargetId = "cont", // ID of the HTML element to update
+                        InsertionMode = InsertionMode.Replace, // Replace the existing contents
+                        LoadingElementId = "divloading"
+
+                    })
+                </li>
+                <li>
+                    @Ajax.ActionLink(@Resources.Resources.PaymentInformation, "UpdatePayment",
+
+                            new AjaxOptions
+                    {
+                        HttpMethod = "GET", // HttpMethod to use, GET or POST
+                        UpdateTargetId = "cont", // ID of the HTML element to update
+                        InsertionMode = InsertionMode.Replace, // Replace the existing contents
+                        LoadingElementId = "divloading",
+                        OnBegin = "ClearResults"
+                    })
+            </li>
+                    <li>
+                        @Ajax.ActionLink(@Resources.Resources.creditCards, "ListPaymentOption",
+
+                            new AjaxOptions
+                    {
+                        HttpMethod = "GET", // HttpMethod to use, GET or POST
+                        UpdateTargetId = "cont", // ID of the HTML element to update
+                        InsertionMode = InsertionMode.Replace, // Replace the existing contents
+                        LoadingElementId = "divloading",
+                        OnBegin = "ClearResults"
+                    })
+                    </li>
+
+        </ul>
+    </ul>
+</div>
+
+<br />
+
+@{Html.RenderAction("CategoryList", "Home");}
+
+<script type="text/javascript">
+    $(function () {
+        var menu_ul = $('.menu > li > ul'),
+               menu_a = $('.menu > li > a');
+        menu_ul.hide();
+        menu_a.click(function (e) {
+            e.preventDefault();
+            if (!$(this).hasClass('active')) {
+                menu_a.removeClass('active');
+                menu_ul.filter(':visible').slideUp('normal');
+                $(this).addClass('active').next().stop(true, true).slideDown('normal');
+            } else {
+                $(this).removeClass('active');
+                $(this).next().stop(true, true).slideUp('normal');
+            }
+        });
+
+    });
+</script>
+</div>
+
+<div class="clearfix"> </div>
+</div>
+

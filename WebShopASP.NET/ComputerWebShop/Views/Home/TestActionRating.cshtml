@@ -1,0 +1,42 @@
+﻿@model ComputerWebShop.ViewModel.ProductRatingViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <link href="~/rating_1_0/rating.css" rel="stylesheet" />
+    <script src="~/rating_1_0/rating.js"></script>
+    <title>TestAction</title>
+    <script>
+
+        $(function () {
+            $('.rating').attr('value', '3');
+
+            $('.rating').rating();
+            $('#form1').click(function () {
+                
+                var data = {};
+                data.rating = $("#rating1").val();
+                $.post("@Url.Action("TestRateIt", "Home")",data,function(data)
+                {
+                    $('.rating').attr('value', data);
+                });
+            });
+
+            
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" method="post" >
+      @Model.AverageRating
+        <input type="text" id="rating1" name="rating"    class="rating rating5" />
+    </form>
+    
+</body>
+</html>

@@ -23,7 +23,7 @@ body a{
 	float: left;
 }
 ul.support{
-	padding: 0 1em 0 0em;
+	padding: 0 1em 0 0;
 	margin: 0;
 	float: left;
 }
@@ -411,7 +411,7 @@ width: 49%;
 	font-size: 1em;
 }
 a.view-all span{
-	background: url(../images/arrow2.png)0px 0px;
+	background: url(/content/images/arrow2.png) 0 0;
 	width: 15px;
 	height: 14px;
 	display:inline-block;
@@ -464,7 +464,7 @@ h5.latest-product{
 	padding: 3em 0;
 }
 .chain-grid span.star{
-	background: url(../images/img-sprite.png)-208px -14px;
+	background: url(/content/images/img-sprite.png)-208px -14px;
 	width: 52px;
 	height: 52px;
 	display: block;
@@ -616,11 +616,11 @@ p.m_text {
 }
 .nbs-flexisel-nav-left {
 	left: 0px;
-	background: url(../images/img-sprite.png) no-repeat -446px -21px;
+	background: url(/content/images/img-sprite.png) no-repeat -446px -21px;
 }
 .nbs-flexisel-nav-right {
 	right: 0px;
-	background: url(../images/img-sprite.png) no-repeat -477px -21px;
+	background: url(/content/images/img-sprite.png) no-repeat -477px -21px;
 }
 
 .etalage_zoom_area div {
@@ -737,7 +737,7 @@ p.m_text {
 }
 .info {
    display: block;
-	background: url(../images/label_new.png) no-repeat;
+	background: url(/content/images/label_new.png) no-repeat;
 	text-indent: -9999px;
 	width: 75px;
 	height: 75px;
@@ -966,7 +966,7 @@ border: 1px solid #EEE;
 }
 .checkbox input + i:after {
 	content: '';
-	background: url("../images/tick1.png") no-repeat 1px 2px;
+	background: url("/content/images/tick1.png") no-repeat 1px 2px;
 	top: -1px;
 	left: -1px;
 	width: 15px;
@@ -1068,7 +1068,7 @@ ul.face-in-to li {
 	float:left;
 }
 ul.face-in-to li a span{
-	background: url(../images/img-sprite.png) -281px 0px;
+	background: url(/content/images/img-sprite.png) -281px 0;
 	width: 69px;
 	height: 71px;
 	display: block;

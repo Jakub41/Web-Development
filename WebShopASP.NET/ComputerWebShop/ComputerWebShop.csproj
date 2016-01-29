@@ -650,6 +650,7 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.rateit.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -678,7 +679,6 @@
     <Content Include="ValidationScript\formValidation.js" />
     <Content Include="ValidationScript\jquery.min.js" />
     <Content Include="Views\ProductsRating\OnlyDisplayRating.cshtml" />
-    <Content Include="Scripts\jquery-2.2.0.min.map" />
     <None Include="Web References\CurrencyExchangeRates\CurrencyConversion.disco" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

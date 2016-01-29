@@ -961,7 +961,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My ASP.NET Application.
+        ///   Looks up a localized string similar to JK Eletronics.
         /// </summary>
         public static string Title {
             get {

@@ -314,9 +314,14 @@
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Female.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Male.cs" />
     <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\Other.cs" />
     <Compile Include="Models\PaymentInfo.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\ProductsComments.cs" />
     <Compile Include="Models\ProductsRating.cs" />
@@ -772,6 +777,7 @@
     <Folder Include="Api\App_Data\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Customer\" />
+    <Folder Include="Views\Person\" />
     <Folder Include="Views\Ratings\" />
   </ItemGroup>
   <ItemGroup>

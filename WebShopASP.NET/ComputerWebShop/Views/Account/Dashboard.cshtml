@@ -23,61 +23,60 @@
             <ul class="menu">
 
 
-
-
                 <ul class="kid-menu ">
                     <li></li>
                     <li>
                         @Ajax.ActionLink(@Resources.Resources.EditDetails, "EditCustomerDetails",
 
                             new AjaxOptions
-                    {
-                        HttpMethod = "GET", // HttpMethod to use, GET or POST
-                        UpdateTargetId = "cont", // ID of the HTML element to update
-                        InsertionMode = InsertionMode.Replace, // Replace the existing contents
-                        LoadingElementId = "divloading"
+                            {
+                                HttpMethod = "GET", // HttpMethod to use, GET or POST
+                                UpdateTargetId = "cont", // ID of the HTML element to update
+                                InsertionMode = InsertionMode.Replace, // Replace the existing contents
+                                LoadingElementId = "divloading"
 
-                    })
-                    </li></li>
+                            })
+                    </li>
+        
                     <li>
                         @Ajax.ActionLink(@Resources.Resources.Products, "ProductsBought",
 
                             new AjaxOptions
-                    {
-                        HttpMethod = "GET", // HttpMethod to use, GET or POST
-                        UpdateTargetId = "cont", // ID of the HTML element to update
-                        InsertionMode = InsertionMode.Replace, // Replace the existing contents
-                        LoadingElementId = "divloading"
+                            {
+                                HttpMethod = "GET", // HttpMethod to use, GET or POST
+                                UpdateTargetId = "cont", // ID of the HTML element to update
+                                InsertionMode = InsertionMode.Replace, // Replace the existing contents
+                                LoadingElementId = "divloading"
 
-                    })
-                </li>
-                <li>
-                    @Ajax.ActionLink(@Resources.Resources.PaymentInformation, "UpdatePayment",
+                            })
+                    </li>
+                    <li>
+                        @Ajax.ActionLink(@Resources.Resources.PaymentInformation, "UpdatePayment",
 
                             new AjaxOptions
-                    {
-                        HttpMethod = "GET", // HttpMethod to use, GET or POST
-                        UpdateTargetId = "cont", // ID of the HTML element to update
-                        InsertionMode = InsertionMode.Replace, // Replace the existing contents
-                        LoadingElementId = "divloading",
-                        OnBegin = "ClearResults"
-                    })
-            </li>
+                            {
+                                HttpMethod = "GET", // HttpMethod to use, GET or POST
+                                UpdateTargetId = "cont", // ID of the HTML element to update
+                                InsertionMode = InsertionMode.Replace, // Replace the existing contents
+                                LoadingElementId = "divloading",
+                                OnBegin = "ClearResults"
+                            })
+                    </li>
                     <li>
                         @Ajax.ActionLink(@Resources.Resources.creditCards, "ListPaymentOption",
 
                             new AjaxOptions
-                    {
-                        HttpMethod = "GET", // HttpMethod to use, GET or POST
-                        UpdateTargetId = "cont", // ID of the HTML element to update
-                        InsertionMode = InsertionMode.Replace, // Replace the existing contents
-                        LoadingElementId = "divloading",
-                        OnBegin = "ClearResults"
-                    })
+                            {
+                                HttpMethod = "GET", // HttpMethod to use, GET or POST
+                                UpdateTargetId = "cont", // ID of the HTML element to update
+                                InsertionMode = InsertionMode.Replace, // Replace the existing contents
+                                LoadingElementId = "divloading",
+                                OnBegin = "ClearResults"
+                            })
                     </li>
 
-        </ul>
-    </ul>
+                </ul>
+            </ul>
 </div>
 
 <br />

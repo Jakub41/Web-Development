@@ -61,8 +61,10 @@ namespace ComputerWebShop.Controllers
                 }
                 if (panel == "ListPaymentInfo") 
                 {
-                    objOrderViewModel.cPaymentInfo = db.PaymentInfo.ToList();
- 
+                    string applicationuserid1 = User.Identity.GetUserId();
+                    int CustID = db.Customer.Where(m => m.ApplicationUserID == applicationuserid1).FirstOrDefault().ID;
+                    objOrderViewModel.cPaymentInfo = db.PaymentInfo.Where(m => m.CustomerID == CustID).ToList();
+
                 }
             }
             string applicationuserid = User.Identity.GetUserId();
@@ -126,9 +128,15 @@ namespace ComputerWebShop.Controllers
         //List Payement Options 
         public ActionResult ListPaymentOption() 
         {
-            
-            OrderViewModel objOrderViewModel = new OrderViewModel();    
-           objOrderViewModel.cPaymentInfo=  db.PaymentInfo.ToList();
+            /*
+            string applicationuserid1 = User.Identity.GetUserId();
+                    int CustID = db.Customer.Where(m => m.ApplicationUserID == applicationuserid1).FirstOrDefault().ID;
+                    objOrderViewModel.cPaymentInfo = db.PaymentInfo.Where(m => m.CustomerID == CustID ).ToList();
+            */
+            string applicationuserid1 = User.Identity.GetUserId();
+            OrderViewModel objOrderViewModel = new OrderViewModel();
+            int CustID = db.Customer.Where(m => m.ApplicationUserID == applicationuserid1).FirstOrDefault().ID;
+            objOrderViewModel.cPaymentInfo = db.PaymentInfo.Where(m => m.CustomerID == CustID).ToList();
             ViewBag.panel = "ListPaymentInfo";
             return PartialView("PartialDashboard",objOrderViewModel);
         }

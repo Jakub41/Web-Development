@@ -196,6 +196,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Message.
+        /// </summary>
+        public static string ContactUs_Comment_Your_Message {
+            get {
+                return ResourceManager.GetString("ContactUs_Comment_Your_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Email.
+        /// </summary>
+        public static string ContactUs_Email_Tour_Email {
+            get {
+                return ResourceManager.GetString("ContactUs_Email_Tour_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Name.
+        /// </summary>
+        public static string ContactUs_FirstName_Your_Name {
+            get {
+                return ResourceManager.GetString("ContactUs_FirstName_Your_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Last Name.
+        /// </summary>
+        public static string ContactUs_LastName_Your_Last_Name {
+            get {
+                return ResourceManager.GetString("ContactUs_LastName_Your_Last_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
         public static string Country {

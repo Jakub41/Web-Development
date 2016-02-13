@@ -161,15 +161,14 @@ namespace ComputerWebShop.Controllers
 
         public ActionResult LoginPartial()
         {
-            ViewModelRetrieveName obj = new ViewModelRetrieveName() { Name = "hussan" };
+            ViewModelRetrieveName obj = new ViewModelRetrieveName() { Name = "Test" };
             return PartialView(obj);
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
+
     }
 }

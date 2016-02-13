@@ -1,0 +1,55 @@
+﻿@model ComputerWebShop.Models.ContactUs
+@{
+    ViewBag.Title = "Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    @using (Html.BeginForm())
+
+    {
+        @Html.AntiForgeryToken()
+        <h1>@Resources.Resources.Contactus</h1>
+        <hr />
+        <div class="form-group" id="contactForm">
+            <div class = "col-md-2 control-label">
+                @Resources.Resources.ContactUs_FirstName_Your_Name
+            </div>
+            
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FirstName, new {@class = "form-control"})
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.LastName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Comment, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m => m.Comment, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Comment)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Send" />
+            </div>
+        </div>
+
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

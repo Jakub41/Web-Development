@@ -187,6 +187,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
@@ -313,6 +314,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Orders.cs" />
@@ -679,8 +681,12 @@
     <Content Include="ValidationScript\formValidation.js" />
     <Content Include="ValidationScript\jquery.min.js" />
     <Content Include="Views\ProductsRating\OnlyDisplayRating.cshtml" />
+    <Content Include="Views\ContactUs\Succes.cshtml" />
+    <Content Include="Views\ContactUs\ContactUs.cshtml" />
     <None Include="Web References\CurrencyExchangeRates\CurrencyConversion.disco" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

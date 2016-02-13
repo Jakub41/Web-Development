@@ -458,4 +458,16 @@ navn</value>
   <data name="YouhaveRated" xml:space="preserve">
     <value>Du har Bedømmelse</value>
   </data>
+  <data name="ContactUs_Comment_Your_Message" xml:space="preserve">
+    <value>Din Besked</value>
+  </data>
+  <data name="ContactUs_Email_Tour_Email" xml:space="preserve">
+    <value>Din Email</value>
+  </data>
+  <data name="ContactUs_FirstName_Your_Name" xml:space="preserve">
+    <value>Din Navn</value>
+  </data>
+  <data name="ContactUs_LastName_Your_Last_Name" xml:space="preserve">
+    <value>Din Efternavn </value>
+  </data>
 </root>

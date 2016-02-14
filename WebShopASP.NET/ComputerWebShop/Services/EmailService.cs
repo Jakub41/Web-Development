@@ -58,7 +58,8 @@ namespace ComputerWebShop.Services
             m.From = new MailAddress("lemiszewski@gmx.com");
             m.Subject = "Confirm Your Account";
             // string link = "http://localhost:2818/Account/RegisterConfirmation/" + confirmationToken + "";
-            m.Body = "you order has been successfully confirmed thaks for buying at computer webshop";
+            m.Body = "Your order has been successfully confirmed thank you for buying at computer webshop";
+            m.Body = "Please discover some more offers on our shop online";
             m.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
 

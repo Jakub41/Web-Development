@@ -470,4 +470,7 @@ navn</value>
   <data name="ContactUs_LastName_Your_Last_Name" xml:space="preserve">
     <value>Din Efternavn </value>
   </data>
+  <data name="FillFormContact" xml:space="preserve">
+    <value>Udfyld nedenstående formular for at sende os en besked:</value>
+  </data>
 </root>

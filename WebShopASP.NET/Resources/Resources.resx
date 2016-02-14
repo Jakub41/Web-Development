@@ -477,4 +477,7 @@
   <data name="ContactUs_Comment_Your_Message" xml:space="preserve">
     <value>Your Message</value>
   </data>
+  <data name="FillFormContact" xml:space="preserve">
+    <value>Fill in the form below to send us a message:</value>
+  </data>
 </root>

@@ -430,6 +430,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fill in the form below to send us a message:.
+        /// </summary>
+        public static string FillFormContact {
+            get {
+                return ResourceManager.GetString("FillFormContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First Name.
         /// </summary>
         public static string FirstName {

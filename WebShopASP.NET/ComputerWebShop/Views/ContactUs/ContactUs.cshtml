@@ -1,55 +1,76 @@
-﻿@model ComputerWebShop.Models.ContactUs
+﻿@using System.Web.UI.WebControls
+@model ComputerWebShop.Models.ContactUs
 @{
-    ViewBag.Title = "Contact Us";
+    ViewBag.Title = Resources.Resources.Contactus;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="row">
-    @using (Html.BeginForm())
+    <div class="col-sm-6 col-sm-offset-3 form-box">
+        <div class="form-top">
+            <div class="form-top-left">
+                <h3>@Resources.Resources.Contactus</h3>
+                <p>@Resources.Resources.FillFormContact</p>
+            </div>
+            <div class="form-top-right">
+                <i class="fa fa-envelope"></i>
+            </div>
+        </div>
+        <div class="form-bottom contactus-form">
+            @using (Html.BeginForm())
 
-    {
-        @Html.AntiForgeryToken()
-        <h1>@Resources.Resources.Contactus</h1>
-        <hr />
-        <div class="form-group" id="contactForm">
-            <div class = "col-md-2 control-label">
-                @Resources.Resources.ContactUs_FirstName_Your_Name
-            </div>
-            
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.FirstName, new {@class = "form-control"})
-                @Html.ValidationMessageFor(m => m.FirstName)
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.LastName)
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Email)
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Comment, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(m => m.Comment, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Comment)
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" class="btn btn-default" value="Send" />
-            </div>
-        </div>
+            {
+                @Html.AntiForgeryToken()
 
-    }
+
+                <div class="form-group">
+
+                    @Html.EditorFor(m => m.FirstName, new { @class = "form-control", htmlAttributes = new { placeholder = @Resources.Resources.ContactUs_FirstName_Your_Name } })
+
+
+                    <!--@Html.TextBoxFor(m => m.FirstName, new {@class = "form-control", @id = ""})-->
+                    @Html.ValidationMessageFor(m => m.FirstName)
+
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(m => m.LastName, new { @class = "form-control", htmlAttributes = new { placeholder = @Resources.Resources.ContactUs_LastName_Your_Last_Name } })
+
+                    <!--@Html.TextBoxFor(m => m.LastName, new {@class = "form-control"})-->
+                    @Html.ValidationMessageFor(m => m.LastName)
+
+                </div>
+                <div class="form-group">
+
+                    <label class="sr-only">Email</label>
+                    @Html.EditorFor(model => model.Email, new
+               {
+                   htmlAttributes = new
+{
+    @class = "contact-mail form-control",
+    placeholder = @Html.DisplayNameFor(m => m.Email)
+}
+               })
+@Html.ValidationMessageFor(m => m.Email)
+                </div>
+                <div class="form-group">
+                    @Html.TextAreaFor(m => m.Comment, new { @class = "contact-message form-control", @id = "contact-message", htmlAttributes = new { @placeholder = @Resources.Resources.ContactUs_Comment_Your_Message } })
+
+                    @Html.ValidationMessageFor(m => m.Comment)
+
+                </div>
+
+
+
+
+
+                <input type="submit" class="btn btn-default" value="Send" id="btnContactForm" />
+
+            }
+        </div>
+        
+
+    </div>
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -12,7 +12,7 @@ using ComputerWebShop.Helper;
 
 namespace ComputerWebShop.Controllers
 {
-    public class ContactUsController : Controller
+    public class ContactUsController : BaseController
     {
         // GET: ContactUs
         public ActionResult ContactUs()

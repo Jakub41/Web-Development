@@ -282,11 +282,14 @@ namespace ComputerWebShop.Controllers
                 if (ID != null)
                 {
 
-                    var user = db.Users.Find(ID);
+                    var userAdmin = db.Users.Find(ID);
+                    var userCustomer = db.Users.Find(ID);
                     UserManager.RemoveFromRole(ID,"Admin");
-                    
-                    db.Users.Remove(user);
-                    
+                    UserManager.RemoveFromRole(ID, "Customers");
+
+                    db.Users.Remove(userAdmin);
+                    db.Users.Remove(userCustomer);
+
 
 
                     db.SaveChanges();
@@ -300,6 +303,39 @@ namespace ComputerWebShop.Controllers
                 return RedirectToAction("AdminList", new { status = "Error While Deleting" });
             }
 
+        }
+        public ActionResult DeleteUser()
+        {
+            var users = from u in db.Users
+                        where u.Roles.Any(r => r.RoleId == "2")
+                        select new
+                        {
+                            u.Email,
+                            u.Id
+                        }
+                        ;
+
+            List<ViewModelUser> ListViewModelUser = new List<ViewModelUser>();
+            foreach (var item in users)
+            {
+                ViewModelUser objViewModelUser = new ViewModelUser();
+                objViewModelUser.UserID = item.Id;
+                objViewModelUser.Email = item.Email;
+                ListViewModelUser.Add(objViewModelUser);
+            }
+            return View(ListViewModelUser);
+        }
+        [HttpGet]
+        public ActionResult DeleteUserConfirm(string ID)
+        {
+
+            //   db.Roles.Remove(db.Roles.Where(m => m.Id == ID).Single());
+            db.Customer.Remove(db.Customer.Where(m => m.ApplicationUserID == ID).Single());
+            db.Users.Remove(db.Users.Where(usr => usr.Id == ID).Single());
+
+            db.SaveChanges();
+
+            return RedirectToAction("DeleteUser");
         }
 
         // Create Category

@@ -324,7 +324,9 @@ else if (ViewBag.panel == "ListPaymentInfo")
                 <th>
                     @Html.DisplayName(@Resources.Resources.Code)
                 </th>
-
+                <th>
+                    Delete
+                </th>
                 <th></th>
             </tr>
 
@@ -342,7 +344,9 @@ else if (ViewBag.panel == "ListPaymentInfo")
                     <td>
                         @Html.DisplayFor(modelItem => item.SecurityCode)
                     </td>
-                    
+                    <td>
+                        @Html.ActionLink("Delete", "delete") //Still To Do
+                    </td>
 
                 </tr>
 

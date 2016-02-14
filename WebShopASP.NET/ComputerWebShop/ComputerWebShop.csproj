@@ -345,6 +345,7 @@
     <Compile Include="ViewModel\ViewModelGetBrand.cs" />
     <Compile Include="ViewModel\ViewModelProductList.cs" />
     <Compile Include="ViewModel\ViewModelRetrieveName.cs" />
+    <Compile Include="ViewModel\ViewModelUser.cs" />
     <Compile Include="Web References\CurrencyExchangeRates\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -649,7 +650,6 @@
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
     <Content Include="Scripts\jquery.etalage.min.js" />
     <Content Include="Scripts\jquery.flexisel.js" />
-    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.rateit.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
@@ -660,7 +660,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.wmuSlider.js" />
     <Content Include="Scripts\JquerySearch\jquery-ui.js" />
-    <Content Include="Scripts\jquery_.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Rating Scripts\jquery.js" />
     <Content Include="Scripts\Rating Scripts\jquery.MetaData.js" />
@@ -683,6 +682,7 @@
     <Content Include="Views\ProductsRating\OnlyDisplayRating.cshtml" />
     <Content Include="Views\ContactUs\Succes.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.cshtml" />
+    <Content Include="Views\Admin\DeleteUser.cshtml" />
     <None Include="Web References\CurrencyExchangeRates\CurrencyConversion.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

@@ -38,6 +38,10 @@
 
                         }
 
-        <li class="menu-kid-left"><a href="@Url.Action("ContactUs", "ContactUs")">@Resources.Resources.Contactus</a></li>
+        @*<li class="menu-kid-left"><a href="@Url.Action("ContactUs", "ContactUs")">@Resources.Resources.Contactus</a></li>*@
+
+        <!--Testing Link-->
+        <li class="menu-kid-left">@Html.ActionLink(@Resources.Resources.Contactus, "ContactUs", "ContactUs")</li>
+ 
     </ul>
 </div>

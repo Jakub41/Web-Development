@@ -42,7 +42,7 @@ namespace ComputerWebShop.Controllers
                 int subtotal = db.Cart.Where(m => m.cartID == CartID).Select(g => g.Price).Sum();
                 objOrderViewModel.Subtotal = subtotal;
 
-                ViewBag.CreditCard = new SelectList(db.PaymentInfo, "ID", "CartNumber");
+                ViewBag.CreditCard = new SelectList(db.PaymentInfo.Where(m => m.CustomerID == objOrderViewModel.Customer.ID), "ID", "CartNumber");
 
                 return View(objOrderViewModel);
             }

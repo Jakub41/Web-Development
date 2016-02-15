@@ -140,6 +140,8 @@ namespace ComputerWebShop.Controllers
             ViewBag.panel = "ListPaymentInfo";
             return PartialView("PartialDashboard",objOrderViewModel);
         }
+        //Delet a credit card
+        
         public ActionResult ProductsBought()
         {
             ViewBag.panel = "productsbought";

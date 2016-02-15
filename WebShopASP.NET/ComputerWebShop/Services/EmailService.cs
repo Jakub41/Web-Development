@@ -26,7 +26,7 @@ namespace ComputerWebShop.Services
             m.From = new MailAddress("lemiszewski@gmx.com");
             m.Subject = "Confirm Your Account";
             string link = "http://localhost:2818/Account/RegisterConfirmation/" + confirmationToken + "";
-            string body = "<h1>Hello</h1><stron> " + username.Trim() + "</strong>,";
+            string body = "<h1>Hello</h1><strong> " + username.Trim() + "</strong>,";
             body += "<br /><br /><h2>Please click the following link to activate your account</h2>";
             body += "<br /><a href=" + link + " > Click Here to Confirm </a>" ;
             body += "<br /><br />Thank you!";
@@ -46,8 +46,11 @@ namespace ComputerWebShop.Services
             m.To.Add(to);
             m.From = new MailAddress("lemiszewski@gmx.com");
             m.Subject = "Reset your Password";
+            var body = "<h1>Hello!</h1>";
+            body += "<p>Please use the link below for reset your password</p>";
             string link = "http://localhost:2818/Account/ChangePassword/" + confirmationToken + "";
-            m.Body = "<a href=" + link + ">Click here to reset your password</a>";
+            body += "<a href=" + link + ">Click here to reset your password</a>";
+            m.Body = body;
             m.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
 

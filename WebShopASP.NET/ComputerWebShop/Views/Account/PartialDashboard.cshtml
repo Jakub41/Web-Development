@@ -345,7 +345,12 @@ else if (ViewBag.panel == "ListPaymentInfo")
                         @Html.DisplayFor(modelItem => item.SecurityCode)
                     </td>
                     <td>
-                        @Html.ActionLink("Delete", "delete") //Still To Do
+                        @using (Html.BeginForm("DeletePayment", "Account", FormMethod.Post))
+                        {
+
+                            <input type="hidden" name="CardNumber" value="@item.CartNumber" />
+                            <input type="submit" name="Delete" value="delete" />
+                        }
                     </td>
 
                 </tr>

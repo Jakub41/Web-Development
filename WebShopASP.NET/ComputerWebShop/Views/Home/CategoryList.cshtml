@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<ComputerWebShop.Models.Category>
 
+
+
+
+
 <div class="top-nav rsidebar span_1_of_left">
     <h3 class="cate">@Resources.Resources.categories</h3>
     <ul class="menu">
@@ -9,7 +13,6 @@
             {
             <li class="item1 ">
                 <a href="#">
-
 
                     <p>
                         @item.CategoryName
@@ -39,6 +42,6 @@
 
         <!--Testing Link-->
         <li class="menu-kid-left">@Html.ActionLink(@Resources.Resources.Contactus, "ContactUs", "ContactUs")</li>
-
+ 
     </ul>
 </div>

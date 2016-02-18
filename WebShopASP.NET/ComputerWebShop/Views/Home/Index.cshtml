@@ -1,11 +1,39 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@*@using (Html.BeginForm("SetCulture", "Home"))
+{
+    <fieldset>
+        <legend>@Resources.Resources.Search</legend>
+        <div class="control-group">
+            <div class="controls">
+                <label for="en-us">
+                    <input name="culture" id="en-us" value="en-us" type="submit"  /> English
+                </label>
+            </div>
+        </div>
 
+        <div class="control-group">
+            <div class="controls">
+                <label for="es">
+                    <input name="culture" id="es" value="es" type="submit"  /> Español
+                </label>
+            </div>
+        </div>
+
+        
+
+
+    </fieldset>
+
+
+
+
+}*@
 <div class="container">
 
 
-    @{Html.RenderAction("Slide", "Home");}
+    @{Html.RenderAction("Slide","Home");}
 </div>
 <!---->
 <div class="shoes-grid-left">
@@ -13,7 +41,7 @@
 
 
 
-
+    
 </div>
 <div class="products">
     <h5 class="latest-product">@Resources.Resources.LatestProducts</h5>
@@ -26,8 +54,8 @@
 
 
 
-
-
+    
+    
     <div class="clearfix"> </div>
 </div>
 <div class="products">
@@ -36,16 +64,17 @@
 </div>
 <span>
     @{Html.RenderAction("OnlyDisplayRating", "ProductsRating", new { ProductID = 3 });}
-</span>
+</span> 
 
 <div class="product-left">
 
-
+   
     @{Html.RenderAction("BottomThree", "Home");}
-
+    
     <div class="clearfix"> </div>
 </div>
 <div class="clearfix"> </div>
+	   		   </div>
 <div class="sub-cate">
     @{Html.RenderAction("CategoryList", "Home");}
     <!--initiate accordion-->
@@ -72,4 +101,4 @@
     <a class="view-all all-product" href="~/Products/ListProducts">@Resources.Resources.VIEWALLPRODUCTS<span> </span></a>
 </div>
 <div class="clearfix"> </div>
-
+		</div>

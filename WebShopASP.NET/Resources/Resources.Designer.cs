@@ -313,6 +313,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string DeletePaymentCard {
+            get {
+                return ResourceManager.GetString("DeletePaymentCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Developed By.
         /// </summary>
         public static string DevelopedBy {

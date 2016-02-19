@@ -140,8 +140,20 @@ namespace ComputerWebShop.Controllers
             ViewBag.panel = "ListPaymentInfo";
             return PartialView("PartialDashboard",objOrderViewModel);
         }
-        //Delet a credit card
-        
+        //Delete a credit card
+        [HttpPost]
+        public ActionResult DeletePayment(FormCollection FormCollection)
+        {
+
+            string applicationUserID = User.Identity.GetUserId();
+            int CustID = db.Customer.Where(m => m.ApplicationUserID == applicationUserID).FirstOrDefault().ID;
+
+            string CardNumber = FormCollection["CardNumber"].ToString();
+            db.PaymentInfo.Remove(db.PaymentInfo.Where(m => m.CartNumber == CardNumber && m.CustomerID == CustID).Single());
+            db.SaveChanges();
+            return RedirectToAction("Dashboard");
+        }
+
         public ActionResult ProductsBought()
         {
             ViewBag.panel = "productsbought";

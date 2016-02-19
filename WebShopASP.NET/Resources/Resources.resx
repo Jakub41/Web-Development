@@ -480,4 +480,7 @@
   <data name="FillFormContact" xml:space="preserve">
     <value>Fill in the form below to send us a message:</value>
   </data>
+  <data name="DeletePaymentCard" xml:space="preserve">
+    <value>Delete</value>
+  </data>
 </root>

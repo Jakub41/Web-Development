@@ -473,4 +473,7 @@ navn</value>
   <data name="FillFormContact" xml:space="preserve">
     <value>Udfyld nedenstående formular for at sende os en besked:</value>
   </data>
+  <data name="DeletePaymentCard" xml:space="preserve">
+    <value>Slette</value>
+  </data>
 </root>

@@ -10,14 +10,14 @@
 
 
         @foreach (var item in Model)
-            {
+        {
             <li class="item1 ">
                 <a href="#">
 
                     <p>
                         @item.CategoryName
 
-                        <img class="arrow-img" style="padding:1px" src="~/Content/images/arrow1.png" alt="" />
+                        <img class="arrow-img" style="padding: 1px" src="~/Content/images/arrow1.png" alt=""/>
                     </p>
                 </a>
 
@@ -25,10 +25,10 @@
 
                     <li class="subitem1">
 
-                        <a href="@Url.Action("ListProducts", "Products", new {  CategoryId = item.ID })">@Resources.Resources.AllProducts</a>
+                        <a href="@Url.Action("ListProducts", "Products", new {CategoryId = item.ID})">@Resources.Resources.AllProducts</a>
                     </li>
                     @{
-                        Html.RenderAction("BrandList", "Home", new { Categoryid = item.ID });
+                        Html.RenderAction("BrandList", "Home", new {Categoryid = item.ID});
                     }
 
 
@@ -36,12 +36,13 @@
                 </ul>
             </li>
 
-                        }
+        }
 
         @*<li class="menu-kid-left"><a href="@Url.Action("ContactUs", "ContactUs")">@Resources.Resources.Contactus</a></li>*@
 
         <!--Testing Link-->
         <li class="menu-kid-left">@Html.ActionLink(@Resources.Resources.Contactus, "ContactUs", "ContactUs")</li>
- 
+
     </ul>
+    
 </div>

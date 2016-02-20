@@ -15,7 +15,7 @@ namespace ComputerWebShop.Helper
         private static readonly List<string> _cultures = new List<string> {
             "en-US",  // first culture is the DEFAULT
             "es"
-            ,"da-DK",// Spanish NEUTRAL culture
+            ,"da-DK",// Danish NEUTRAL culture
             "ar"  // Arabic NEUTRAL culture
            
         };

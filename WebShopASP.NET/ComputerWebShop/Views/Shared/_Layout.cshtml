@@ -36,6 +36,7 @@
                     <ul class="support">
                         <li><a href="#"><label> </label></a></li>
                         <li><a href="#">@Resources.Resources.live247<span class="live"> support</span></a></li>
+
                     </ul>
                     <ul class="support">
                         <li class="van"><a href="#"><label> </label></a></li>
@@ -176,7 +177,7 @@
         {
 
         <script type="text/javascript">
-            $(document).ready(function () {
+            $(document).ready(function() {
 
                 var errormsg = "";
                 var amount = $('#txtAmount').val();
@@ -188,13 +189,13 @@
                     data: "{amount:" + amount + ",fromCurrency:'" + from + "',toCurrency:'" + to + "'}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
-                    beforeSend: function () {
+                    beforeSend: function() {
                         $('#results').html("Converting...");
                     },
-                    success: function (data) {
+                    success: function(data) {
                         $('#results').html(amount + ' ' + from + '=' + data.d.toFixed(2) + ' ' + to);
                     },
-                    error: function (jqXHR, exception) {
+                    error: function(jqXHR, exception) {
                         if (jqXHR.status === 0) {
                             errormsg = 'Not connect.\n Verify Network.';;
                         } else if (jqXHR.status == 404) {
@@ -211,7 +212,7 @@
                             errormsg = 'Uncaught Error.';
                         }
                         $('#results').html(errormsg);
-                        $('<a href="#" >Click here for more details</a>').click(function () {
+                        $('<a href="#" >Click here for more details</a>').click(function() {
                             alert(jqXHR.responseText);
                         }).appendTo('#results');
                     }
@@ -220,6 +221,7 @@
             });
 
         </script>
+        
 
     }
     @Scripts.Render("~/bundles/bootstrap")

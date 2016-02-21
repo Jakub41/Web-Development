@@ -103,7 +103,7 @@
                     <script type="text/javascript">
                         $(function () {
                             $("#txtSearch").autocomplete({
-                                source: '@Url.Action("GetStudents","Home")',
+                                source: '@Url.Action("GetProducts","Home")',
                                 minLength: 1
                             });
                         });
@@ -112,8 +112,8 @@
                     @using (Html.BeginForm("ListProducts", "Products", FormMethod.Get))
                     {
                         <div class="search">
-                            <input type="text" id="txtSearch" name="Search" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-                            <input type="submit" name="@Resources.Resources.Search" value="@Resources.Resources.Search">
+                            <input type="text" id="txtSearch" name="Search" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" class="ui-autocomplete-input __browserLink_selected" autocomplete="off">
+                            <input type="submit" name="Search" value="Search" class="">
 
                         </div>
                     }

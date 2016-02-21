@@ -30,7 +30,7 @@ namespace ComputerWebShop.Controllers
             return View();
         }
        
-        public JsonResult GetStudents(string term)
+        public JsonResult GetProducts(string term)
         {
             List<string> products = db.Products.Where(s => s.ProductName.StartsWith(term))
                 .Select(x => x.ProductName).ToList();

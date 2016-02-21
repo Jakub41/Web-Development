@@ -1863,3 +1863,6 @@ textarea.form-control:focus {
 #btnContactForm:focus { outline: 0; opacity: 0.6; background: #19b9e7; color: #fff; }
 
 #btnContactForm:active:focus, #btnContactForm.active:focus { outline: 0; opacity: 0.6; background: #19b9e7; color: #fff; }
+.ui-widget-content {
+    background: #fff0f5 !important;
+}

@@ -34,21 +34,31 @@ namespace ComputerWebShop.Controllers
                     StringBuilder sb = new StringBuilder();
                     msg.To.Add("lemiszewski@gmx.com");
                     msg.Subject = "Contact Us";
-                    msg.IsBodyHtml = false;
+                    msg.IsBodyHtml = true;
                     smtp.Host = "mail.gmx.com";
                     smtp.Port = 587;
                     smtp.EnableSsl = true;
-                    sb.Append("First name: " + c.FirstName);
+
+                    /*sb.Append("First name: " + c.FirstName);
                     sb.Append(Environment.NewLine);
                     sb.Append("Last name: " + c.LastName);
                     sb.Append(Environment.NewLine);
                     sb.Append("Email: " + c.Email);
                     sb.Append(Environment.NewLine);
-                    sb.Append("Message: " + c.Comment);
-                    msg.Body = sb.ToString();
+                    sb.Append("Message: " + c.Comment);*/
+                    /*msg.Body = sb.ToString();*/
+
+                    var body = "<h1>Message from Contact Us form</h1>";
+                    body += "<h2>Customer</h2>";
+                    body += "<p>" + c.FirstName + " " + c.LastName + "</p>";
+                    body += "<h2>Email</h2>";
+                    body += "<p>" + c.Email + " </p>";
+                    body += "<h2>Message</h2>";
+                    body += "<p>"+ c.Comment +"</p>";
+                    msg.Body = body; 
                     smtp.Send(msg);
                     msg.Dispose();
-                    return View("Succes");
+                    return View("Success");
                 }
                 catch (Exception)
                 {

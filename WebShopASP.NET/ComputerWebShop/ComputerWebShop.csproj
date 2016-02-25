@@ -680,7 +680,7 @@
     <Content Include="ValidationScript\formValidation.js" />
     <Content Include="ValidationScript\jquery.min.js" />
     <Content Include="Views\ProductsRating\OnlyDisplayRating.cshtml" />
-    <Content Include="Views\ContactUs\Succes.cshtml" />
+    <Content Include="Views\ContactUs\Success.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.cshtml" />
     <Content Include="Views\Admin\DeleteUser.cshtml" />
     <None Include="Web References\CurrencyExchangeRates\CurrencyConversion.disco" />

@@ -471,7 +471,7 @@
   <data name="ContactUs_LastName_Your_Last_Name" xml:space="preserve">
     <value>Your Last Name</value>
   </data>
-  <data name="ContactUs_Email_Tour_Email" xml:space="preserve">
+  <data name="ContactUs_Email_Your_Email" xml:space="preserve">
     <value>Your Email</value>
   </data>
   <data name="ContactUs_Comment_Your_Message" xml:space="preserve">
@@ -482,5 +482,14 @@
   </data>
   <data name="DeletePaymentCard" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="ValidEmailAddress" xml:space="preserve">
+    <value>Please enter a valid email address</value>
+  </data>
+  <data name="SuccessContact" xml:space="preserve">
+    <value>Success!</value>
+  </data>
+  <data name="SuccesMessageContact" xml:space="preserve">
+    <value>Your message was sent successfully. We'll contact you as soon as possible.</value>
   </data>
 </root>

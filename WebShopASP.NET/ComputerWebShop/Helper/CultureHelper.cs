@@ -70,7 +70,7 @@ namespace ComputerWebShop.Helper
 
 
         /// <summary>
-        /// Returns default culture name which is the first name decalared (e.g. en-US)
+        /// Returns default culture name which is the first name declared (e.g. en-US)
         /// </summary>
         /// <returns></returns>
         public static string GetDefaultCulture()

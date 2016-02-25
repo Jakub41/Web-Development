@@ -207,9 +207,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Your Email.
         /// </summary>
-        public static string ContactUs_Email_Tour_Email {
+        public static string ContactUs_Email_Your_Email {
             get {
-                return ResourceManager.GetString("ContactUs_Email_Tour_Email", resourceCulture);
+                return ResourceManager.GetString("ContactUs_Email_Your_Email", resourceCulture);
             }
         }
         
@@ -997,6 +997,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your message was sent successfully. We&apos;ll contact you as soon as possible..
+        /// </summary>
+        public static string SuccesMessageContact {
+            get {
+                return ResourceManager.GetString("SuccesMessageContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success!.
+        /// </summary>
+        public static string SuccessContact {
+            get {
+                return ResourceManager.GetString("SuccessContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tax.
         /// </summary>
         public static string Tax {
@@ -1110,6 +1128,15 @@ namespace Resources {
         public static string ValidCardNumber {
             get {
                 return ResourceManager.GetString("ValidCardNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a valid email address.
+        /// </summary>
+        public static string ValidEmailAddress {
+            get {
+                return ResourceManager.GetString("ValidEmailAddress", resourceCulture);
             }
         }
         

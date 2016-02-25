@@ -53,23 +53,21 @@
 
                                 @if (Request.Cookies["_culture"] != null)
                                 {
-                                    if (Request.Cookies["_culture"].Value == "da-DK")
+                                    switch (Request.Cookies["_culture"].Value)
                                     {
-                                        <option value="da-DK" selected="selected" class="in-of">Danish</option>
-                                        <option value="en-us" class="in-of">English</option>
-                                    }
-                                    else if (Request.Cookies["_culture"].Value == "en-US")
-                                    {
-                                        <option value="en-us" selected="selected" class="in-of">English</option>
+                                        case "da-DK":
+                                            <option value="da-DK" selected="selected" class="in-of">Danish</option>
+                                            <option value="en-us" class="in-of">English</option>
+                                            break;
+                                        case "en-US":
+                                            <option value="en-us" selected="selected" class="in-of">English</option>
 
-                                        <option value="da-DK" class="in-of">Danish</option>
-                                    }
-                                    else
-                                    {
-                                        <option value="en-us" class="in-of">English</option>
-                                        <option value="da-DK" class="in-of">Danish</option>
-
-
+                                            <option value="da-DK" class="in-of">Danish</option>
+                                            break;
+                                        default:
+                                            <option value="en-us" class="in-of">English</option>
+                                            <option value="da-DK" class="in-of">Danish</option>
+                                            break;
                                     }
                                 }
                                 else
